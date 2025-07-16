@@ -15,4 +15,8 @@ public class SweetShopServices {
         sweetStore.put(sweetShopModel.getId(), sweetShopModel);
         return true;
     }
+
+    public boolean deleteSweet(int id) {
+        return sweetStore.remove(id) != null;
+    }
 }

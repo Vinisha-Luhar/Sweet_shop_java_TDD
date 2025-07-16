@@ -27,4 +27,14 @@ public class SweetShopTest{
     void addSweet_WhenDuplicateId_ShouldFail() {
         assertFalse(service.addSweet(new SweetShopModel(1, "New Sweet", "Any", 15, 10)));
     }
+
+    @Test
+    void deleteSweet_ShouldRemoveSweet() {
+        assertTrue(service.deleteSweet(2));
+    }
+
+    @Test
+    void deleteSweet_WhenIdNotFound_ShouldReturnFalse() {
+        assertFalse(service.deleteSweet(100));
+    }
 }
