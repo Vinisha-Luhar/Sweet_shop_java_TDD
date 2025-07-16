@@ -53,4 +53,12 @@ public class SweetShopServices {
                 .sorted(Comparator.comparingDouble(SweetShopModel::getPrice))
                 .collect(Collectors.toList());
     }
+
+    public void purchaseSweet(int id, int quantity) throws Exception {
+        SweetShopModel sweetShopModel = sweetStore.get(id);
+        if (sweetShopModel == null || sweetShopModel.getQuantity() < quantity) {
+            throw new Exception("Not enough stock");
+        }
+        sweetShopModel.setQuantity(sweetShopModel.getQuantity() - quantity);
+    }
 }

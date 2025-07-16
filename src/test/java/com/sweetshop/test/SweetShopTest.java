@@ -74,4 +74,16 @@ public class SweetShopTest{
         assertEquals("Gulab Jamun", sorted.get(0).getName());
     }
 
+    @Test
+    void purchaseSweet_ShouldReduceStock() throws Exception {
+        service.purchaseSweet(1, 5);
+        assertEquals(15, service.viewAllSweets().get(0).getQuantity());
+    }
+
+    @Test
+    void purchaseSweet_WhenInsufficient_ShouldThrowException() {
+        assertThrows(Exception.class, () -> {
+            service.purchaseSweet(1, 100);
+        });
+    }
 }
