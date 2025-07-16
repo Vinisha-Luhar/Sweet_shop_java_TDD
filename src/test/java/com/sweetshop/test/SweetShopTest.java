@@ -86,4 +86,10 @@ public class SweetShopTest{
             service.purchaseSweet(1, 100);
         });
     }
+
+    @Test
+    void restockSweet_ShouldIncreaseStock() {
+        assertTrue(service.restockSweet(1, 10));
+        assertEquals(30, service.viewAllSweets().get(0).getQuantity());
+    }
 }

@@ -61,4 +61,13 @@ public class SweetShopServices {
         }
         sweetShopModel.setQuantity(sweetShopModel.getQuantity() - quantity);
     }
+
+    public boolean restockSweet(int id, int quantity) {
+        SweetShopModel sweetShopModel = sweetStore.get(id);
+        if (sweetShopModel == null || quantity <= 0) {
+            return false;
+        }
+        sweetShopModel.setQuantity(sweetShopModel.getQuantity() + quantity);
+        return true;
+    }
 }
