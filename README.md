@@ -22,17 +22,16 @@ This Repo is basically the backend implementation of a Sweet_Shop in java that f
 - Maven (optional but recommended)
 
 ## How to Run the Project
+- Using IntelliJ IDEA / Eclipse
+- Clone the repository
+- git clone https://github.com/Vinisha-Luhar/Sweet_shop_java_TDD
+- Run the tests
+- Navigate to SweetShopServiceTest.java and click ▶ on the class or individual test methods.
 
-Using IntelliJ IDEA / Eclipse
-Clone the repository
-git clone <repo-url>
-Run the tests
-Navigate to SweetShopServiceTest.java and click ▶ on the class or individual test methods.
-
-If using Maven:
-Navigate to the project folder:
-cd sweet-shop
-Run the tests:
-mvn test
+- If using Maven:
+- Navigate to the project folder:
+- cd sweet-shop
+- Run the tests:
+- mvn test
 
 ## No frontend is implemented (backend logic only)
