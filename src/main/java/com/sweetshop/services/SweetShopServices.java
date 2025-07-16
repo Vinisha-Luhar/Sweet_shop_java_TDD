@@ -2,7 +2,9 @@ package com.sweetshop.services;
 
 import com.sweetshop.model.SweetShopModel;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class SweetShopServices {
@@ -18,5 +20,9 @@ public class SweetShopServices {
 
     public boolean deleteSweet(int id) {
         return sweetStore.remove(id) != null;
+    }
+
+    public List<SweetShopModel> viewAllSweets() {
+        return new ArrayList<>(sweetStore.values());
     }
 }

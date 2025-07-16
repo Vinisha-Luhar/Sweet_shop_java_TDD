@@ -4,6 +4,9 @@ import com.sweetshop.model.SweetShopModel;
 import com.sweetshop.services.SweetShopServices;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
@@ -36,5 +39,11 @@ public class SweetShopTest{
     @Test
     void deleteSweet_WhenIdNotFound_ShouldReturnFalse() {
         assertFalse(service.deleteSweet(100));
+    }
+
+    @Test
+    void viewAllSweets_ShouldReturnAll() {
+        List<SweetShopModel> all = service.viewAllSweets();
+        assertEquals(3, all.size());
     }
 }
