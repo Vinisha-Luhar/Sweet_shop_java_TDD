@@ -61,4 +61,17 @@ public class SweetShopTest{
     void searchByPriceRange_ShouldReturnInRange() {
         assertEquals(2, service.searchByPriceRange(10, 30).size());
     }
+
+    @Test
+    void sortByName_ShouldSortAlphabetically() {
+        List<SweetShopModel> sorted = service.sortByName();
+        assertEquals("Gajar Halwa", sorted.get(0).getName());
+    }
+
+    @Test
+    void sortByPrice_ShouldSortByAscendingPrice() {
+        List<SweetShopModel> sorted = service.sortByPrice();
+        assertEquals("Gulab Jamun", sorted.get(0).getName());
+    }
+
 }

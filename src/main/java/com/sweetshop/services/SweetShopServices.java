@@ -2,10 +2,7 @@ package com.sweetshop.services;
 
 import com.sweetshop.model.SweetShopModel;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class SweetShopServices {
@@ -42,6 +39,18 @@ public class SweetShopServices {
     public List<SweetShopModel> searchByPriceRange(double min, double max) {
         return sweetStore.values().stream()
                 .filter(s -> s.getPrice() >= min && s.getPrice() <= max)
+                .collect(Collectors.toList());
+    }
+
+    public List<SweetShopModel> sortByName() {
+        return sweetStore.values().stream()
+                .sorted(Comparator.comparing(SweetShopModel::getName))
+                .collect(Collectors.toList());
+    }
+
+    public List<SweetShopModel> sortByPrice() {
+        return sweetStore.values().stream()
+                .sorted(Comparator.comparingDouble(SweetShopModel::getPrice))
                 .collect(Collectors.toList());
     }
 }
