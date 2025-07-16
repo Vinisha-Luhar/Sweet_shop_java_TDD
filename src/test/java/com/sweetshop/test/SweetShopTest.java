@@ -46,4 +46,19 @@ public class SweetShopTest{
         List<SweetShopModel> all = service.viewAllSweets();
         assertEquals(3, all.size());
     }
+
+    @Test
+    void searchByName_ShouldReturnMatch() {
+        assertEquals(1, service.searchByName("Kaju Katli").size());
+    }
+
+    @Test
+    void searchByCategory_ShouldReturnMatch() {
+        assertEquals(1, service.searchByCategory("Nut-Based").size());
+    }
+
+    @Test
+    void searchByPriceRange_ShouldReturnInRange() {
+        assertEquals(2, service.searchByPriceRange(10, 30).size());
+    }
 }
